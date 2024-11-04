@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      GREETING: "Hello"
-      TARGET: "World"
+      GREETING: "Gre"
+      TARGET: "etings"
 
     steps:
       - name: Check out repository code

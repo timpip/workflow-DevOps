@@ -7,18 +7,21 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   greet:
     runs-on: ubuntu-latest
+
     env:
-     GREETING:"Hello"
-       
+      GREETING: "Hello"
+      TARGET: "World"
+
     steps:
-      # Runs a single command using the runners shell
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        
+      # Runs a single command using the runner's shell
       - name: Say Greeting
         run: echo "${{ env.GREETING }}, ${{ env.TARGET }}!"
-
 

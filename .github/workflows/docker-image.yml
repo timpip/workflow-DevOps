@@ -12,4 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . docker build . -t devopssandbox
+      run: docker build . -t devopssandbox
+
+    - uses: actions/checkout@v4
+    - name: Run the Docker image
+      run: docker run -p 8080:80 devopssandbox
